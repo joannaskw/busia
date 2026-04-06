@@ -1,0 +1,539 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import okladka from '../assets/images/okladka.jpg';
+import portret from '../assets/images/busia-portret.png';
+import stachKawiarnia from '../assets/images/busia-stach-kawiarnia.png';
+import elegancka from '../assets/images/busia-elegancka.png';
+import prawnuczki from '../assets/images/busia-prawnuczki.png';
+import autorka from '../assets/images/autorka.jpg';
+import testimonials from '../data/testimonials.json';
+---
+<BaseLayout title="BUSIA — Zamów książkę" version="v2">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">BUSIA</a>
+    <a href="#zamow" class="btn btn-primary nav-cta">Zamów teraz</a>
+  </div>
+</nav>
+
+<!-- HERO — okładka + CTA od razu -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-image">
+      <Image src={okladka} alt="Okładka książki BUSIA" width={380} class="cover-img" />
+    </div>
+    <div class="hero-text">
+      <h1>BUSIA</h1>
+      <p class="hero-subtitle">Historia, która zawojowała Facebook</p>
+      <p class="hero-author">Bogusława Skwarna</p>
+      <div class="hero-prices">
+        <div class="price-tag"><span class="price-amount">99 zł</span><span class="price-label">druk + wysyłka</span></div>
+        <div class="price-tag"><span class="price-amount">79 zł</span><span class="price-label">PDF — natychmiast</span></div>
+      </div>
+      <div class="hero-ctas">
+        <a href="#zamow" class="btn btn-primary">Zamów książkę</a>
+        <a href="#o-ksiazce" class="btn btn-secondary">Dowiedz się więcej</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>1 900+</strong> reakcji na FB</div>
+        <div class="stat"><strong>578</strong> komentarzy</div>
+        <div class="stat"><strong>190</strong> stron</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF — skrót -->
+<section class="social-strip">
+  <div class="container">
+    <div class="strip-quotes">
+      {testimonials.slice(0, 4).map((t: { text: string; author: string }) => (
+        <div class="strip-quote">
+          <span class="heart">&#10084;</span>
+          <p>&bdquo;{t.text}&rdquo; <em>— {t.author}</em></p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- O KSIĄŻCE — skrócone -->
+<section id="o-ksiazce" class="about">
+  <div class="container about-inner">
+    <div class="about-text">
+      <h2>Dlaczego ta książka?</h2>
+      <p class="about-lead">Bogusława Lublicka urodziła się w 1911 roku. Miała wszystko — kochających rodziców, dom w Warszawie, pianino, lekcje tenisa. Potem spotkała Stacha. Byli szczęśliwym małżeństwem.</p>
+      <p class="about-highlight">A potem przyszła wojna.</p>
+      <p>Stach zmarł na gruźlicę w 1944 roku. Busia została sama z ośmioletnim synem. Nie złamała się. To opowieść wnuczki o babci — pełna przedwojennych fotografii, listów i wspomnień. Historia jednej kobiety, w której odbija się historia całego pokolenia.</p>
+      <a href="#zamow" class="btn btn-primary">Zamów swoją kopię</a>
+    </div>
+    <div class="about-image">
+      <Image src={stachKawiarnia} alt="Busia i Stach" width={500} />
+    </div>
+  </div>
+</section>
+
+<!-- PRODUKT — główna sekcja -->
+<section id="zamow" class="product">
+  <div class="container">
+    <h2>Wybierz swój format</h2>
+    <div class="product-cards">
+      <div class="product-card featured">
+        <div class="card-badge">Najpopularniejszy</div>
+        <div class="product-icon">📖</div>
+        <h3>Książka drukowana</h3>
+        <p class="product-details">ok. 190 stron, pełen kolor, twarda/miękka oprawa</p>
+        <p class="product-price">99 zł</p>
+        <p class="product-shipping">+ koszt wysyłki (InPost / kurier)</p>
+        <a href="#" class="btn btn-primary">Zamów druk</a>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">📱</div>
+        <h3>Książka PDF</h3>
+        <p class="product-details">Pełna wersja do pobrania natychmiast</p>
+        <p class="product-price">79 zł</p>
+        <p class="product-shipping">Bez wysyłki — dostęp od razu</p>
+        <a href="#" class="btn btn-primary">Zamów PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRAGMENT -->
+<section class="excerpt">
+  <div class="container excerpt-inner">
+    <div class="excerpt-text">
+      <h2>Zajrzyj do środka</h2>
+      <blockquote>
+        A teraz opowiem Ci co ja widzę&hellip;<br /><br />
+        Widzę jak wspólnie robimy drożdżowe ciasto, bo ona nie miała już siły, żeby je sama wyrobić, jak zakłada beret, w taki sposób jak tylko ona to robiła&hellip;<br /><br />
+        Nie tylko widzę, ale też słyszę&hellip; Dźwięk kilkunastu srebrnych bransoletek kółeczek, które na jej ręce brzęczą uderzając o siebie&hellip;<br /><br />
+        Mało tego&hellip; Czuję&hellip; Jej zapach i zapach jej rzeczy. Nikt inny tak nie pachniał i nie pachnie.
+      </blockquote>
+      <a href="#zamow" class="btn btn-primary">Zamów i przeczytaj całość</a>
+    </div>
+    <div class="excerpt-image">
+      <Image src={elegancka} alt="Busia" width={350} />
+    </div>
+  </div>
+</section>
+
+<!-- STOPKA -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <p class="footer-logo">BUSIA</p>
+      <p>&copy; 2026 Bogusława Skwarna</p>
+    </div>
+    <div class="footer-right">
+      <p>Kontakt: <a href="mailto:boguslawaskwarna@gmail.com">boguslawaskwarna@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* === V2 PALETTE: Elegancki burgund ze złotem === */
+  :global(body.v2) {
+    --bg: #FFFDF8;
+    --bg-alt: #1C1018;
+    --text: #2C1810;
+    --text-light: #6B4F43;
+    --accent: #7A1B2E;
+    --accent-light: #B8860B;
+    --border: #D4B896;
+    --btn-text: #FFFDF8;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(255, 253, 248, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+  }
+
+  .nav-cta {
+    padding: 0.5rem 1.5rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 7rem 1.5rem 4rem;
+    background: var(--bg);
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .cover-img {
+    border-radius: 4px;
+    box-shadow: 0 25px 70px rgba(28, 16, 24, 0.3);
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 7vw, 5rem);
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.2rem;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-author {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-prices {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .price-tag {
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+  }
+
+  .price-amount {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .price-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat {
+    font-size: 0.85rem;
+    color: var(--text-light);
+  }
+
+  .stat strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--accent);
+  }
+
+  /* SOCIAL STRIP */
+  .social-strip {
+    background: var(--bg-alt);
+    color: #F0E8DB;
+    padding: 3rem 1.5rem;
+    overflow: hidden;
+  }
+
+  .strip-quotes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .strip-quote {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .strip-quote em {
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+
+  .heart {
+    color: var(--accent);
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  /* ABOUT */
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .about h2 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-lead {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-highlight {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 1.5rem 0;
+  }
+
+  .about-text p {
+    margin-bottom: 1rem;
+  }
+
+  .about-text .btn {
+    margin-top: 1rem;
+  }
+
+  .about-image img {
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  /* PRODUCT */
+  .product {
+    background: linear-gradient(to bottom, var(--bg), #F5EDE0);
+    text-align: center;
+    padding: 5rem 1.5rem;
+  }
+
+  .product h2 {
+    color: var(--accent);
+    margin-bottom: 3rem;
+  }
+
+  .product-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .product-card {
+    background: var(--bg);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .product-card.featured {
+    border-color: var(--accent);
+    transform: scale(1.03);
+  }
+
+  .card-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--btn-text);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .product-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .product-card h3 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .product-details {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+
+  .product-price {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+
+  .product-shipping {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  /* EXCERPT */
+  .excerpt {
+    background: var(--bg);
+  }
+
+  .excerpt-inner {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .excerpt h2 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .excerpt blockquote {
+    border-left-color: var(--accent-light);
+    margin-bottom: 2rem;
+  }
+
+  .excerpt-image img {
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--bg-alt);
+    color: #D4B896;
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--accent-light);
+    margin-bottom: 0.3rem;
+  }
+
+  .footer a {
+    color: var(--accent-light);
+  }
+
+  .footer p {
+    font-size: 0.85rem;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-image {
+      order: -1;
+    }
+
+    .cover-img {
+      max-width: 250px;
+      margin: 0 auto;
+    }
+
+    .hero-prices {
+      justify-content: center;
+    }
+
+    .hero-ctas {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-stats {
+      justify-content: center;
+    }
+
+    .strip-quotes {
+      grid-template-columns: 1fr;
+    }
+
+    .about-inner,
+    .excerpt-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+  }
+</style>
+</BaseLayout>

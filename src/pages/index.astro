@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="BUSIA — Wersje projektu strony" version="index">
+
+<main class="index-page">
+  <div class="container">
+    <h1>BUSIA — Projekt strony</h1>
+    <p class="intro">Pięć wersji landing page'a do przejrzenia. Każda z innym podejściem, układem sekcji i paletą kolorów.</p>
+
+    <div class="versions-grid">
+      <a href="/v1" class="version-card" style="--card-accent: #8B6914;">
+        <div class="version-number">V1</div>
+        <h2>Storytellingowa</h2>
+        <p class="version-approach">Narracja, emocje, stopniowe odkrywanie historii</p>
+        <p class="version-palette">Ciepła sepia / kremowa</p>
+        <div class="version-sections">Cytat otwierający &rarr; Fragment &rarr; O książce &rarr; Jak powstała &rarr; Głosy &rarr; Autorka &rarr; Galeria &rarr; Zakup</div>
+      </a>
+
+      <a href="/v2" class="version-card" style="--card-accent: #7A1B2E;">
+        <div class="version-number">V2</div>
+        <h2>Sprzedażowa</h2>
+        <p class="version-approach">Produkt i CTA na pierwszym planie, krótkie teksty</p>
+        <p class="version-palette">Elegancki burgund ze złotem</p>
+        <div class="version-sections">Okładka + CTA &rarr; Social proof &rarr; O książce &rarr; Zakup &rarr; Fragment</div>
+      </a>
+
+      <a href="/v3" class="version-card" style="--card-accent: #4A5530;">
+        <div class="version-number">V3</div>
+        <h2>O książce</h2>
+        <p class="version-approach">Duża prezentacja książki, szczegóły, fabuła rozpisana chronologicznie</p>
+        <p class="version-palette">Ciemna oliwka z mosiądzem</p>
+        <div class="version-sections">Prezentacja &rarr; Fabuła (5 rozdziałów) &rarr; Fragment &rarr; Autorka &rarr; Głosy &rarr; Zakup</div>
+      </a>
+
+      <a href="/v4" class="version-card" style="--card-accent: #C8553D;">
+        <div class="version-number">V4</div>
+        <h2>Social proof</h2>
+        <p class="version-approach">Screeny z FB, liczby, dowód społeczny jako główny argument</p>
+        <p class="version-palette">Ciepły ceglasty / terakota</p>
+        <div class="version-sections">Liczby + screeny &rarr; Głosy &rarr; Jak powstała &rarr; O książce &rarr; Fragment &rarr; Zakup</div>
+      </a>
+
+      <a href="/v5" class="version-card" style="--card-accent: #374151;">
+        <div class="version-number">V5</div>
+        <h2>Historyczna</h2>
+        <p class="version-approach">Kontekst epoki, oś czasu, archiwalny charakter</p>
+        <p class="version-palette">Stalowy niebieskoszary z patyną</p>
+        <div class="version-sections">Daty + kontekst &rarr; Oś czasu (8 punktów) &rarr; Fragment &rarr; Głosy &rarr; Autorka &rarr; Zakup</div>
+      </a>
+
+      <a href="/v6" class="version-card featured" style="--card-accent: #C8553D;">
+        <div class="version-number">V6 — FINALNA</div>
+        <h2>Połączenie najlepszych elementów</h2>
+        <p class="version-approach">Social proof z V4 + narracja z V1 + fragment z V5 + autorka z V5 + zakup z V2</p>
+        <p class="version-palette">Ciepły ceglasty / terakota</p>
+        <div class="version-sections">Liczby &rarr; Głosy czytelników &rarr; Jak powstała &rarr; O książce &rarr; Fragment &rarr; Autorka &rarr; Zakup</div>
+      </a>
+    </div>
+  </div>
+</main>
+
+<style>
+  :global(body.index) {
+    --bg: #F8F7F5;
+    --text: #2C2C2C;
+    --text-light: #666;
+  }
+
+  .index-page {
+    padding: 4rem 1.5rem;
+    min-height: 100vh;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .intro {
+    text-align: center;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+  }
+
+  .versions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .version-card {
+    display: block;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid #E5E5E5;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .version-card:hover {
+    border-color: var(--card-accent);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  .version-number {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--card-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .version-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--card-accent);
+  }
+
+  .version-approach {
+    color: var(--text);
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .version-palette {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .version-sections {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    padding-top: 1rem;
+    border-top: 1px solid #E5E5E5;
+    line-height: 1.6;
+  }
+</style>
+</BaseLayout>

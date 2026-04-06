@@ -17,7 +17,11 @@
       "Bash(python3:*)",
       "Bash(pip3 install:*)",
       "WebSearch",
-      "Bash(npm --version)"
+      "Bash(npm --version)",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(npx astro:*)",
+      "Bash(pkill -f \"astro preview\")"
     ]
   }
 }

@@ -1,0 +1,584 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import okladka from '../assets/images/okladka.jpg';
+import portret from '../assets/images/busia-portret.png';
+import stachKawiarnia from '../assets/images/busia-stach-kawiarnia.png';
+import autorkaBiale from '../assets/images/autorka-biale.jpg';
+import fbPost1 from '../assets/images/fb-post-1.png';
+import fbKom1 from '../assets/images/fb-komentarze-1.png';
+import testimonials from '../data/testimonials.json';
+---
+<BaseLayout title="BUSIA — Historia, która zawojowała Facebook" version="v6">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">BUSIA</a>
+    <div class="nav-links">
+      <a href="#glosy">Głosy</a>
+      <a href="#o-ksiazce">O książce</a>
+      <a href="#zamow" class="btn btn-primary nav-cta">Zamów</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-stats-bar">
+      <div class="big-stat">
+        <span class="big-number">1 900+</span>
+        <span class="big-label">reakcji na Facebooku</span>
+      </div>
+      <div class="big-stat">
+        <span class="big-number">578</span>
+        <span class="big-label">komentarzy</span>
+      </div>
+      <div class="big-stat">
+        <span class="big-number">1</span>
+        <span class="big-label">książka, o którą prosili</span>
+      </div>
+    </div>
+
+    <div class="hero-main">
+      <div class="hero-text">
+        <h1>Historia, która zawojowała Facebook</h1>
+        <p class="hero-desc">Historia Busi zaczęła się od krótkich postów na Facebooku. Setki osób reagowały, komentowały, prosiły o więcej. Aż w końcu autorka usiadła i napisała książkę. Bo ludzie tego chcieli.</p>
+        <a href="#zamow" class="btn btn-primary">Zamów książkę</a>
+      </div>
+      <div class="hero-cover">
+        <Image src={okladka} alt="Okładka BUSIA" width={350} class="cover-img" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GŁOSY CZYTELNIKÓW -->
+<section id="glosy" class="voices">
+  <div class="container">
+    <h2>Dlaczego ludzie pokochali tę historię</h2>
+    <p class="voices-intro">Zanim powstała książka, historia Busi żyła w komentarzach na Facebooku. Oto co pisali czytelnicy:</p>
+
+    <div class="voices-layout">
+      <div class="voices-quotes">
+        {testimonials.map((t: { text: string; author: string }) => (
+          <div class="voice-card">
+            <div class="voice-icon">
+              <svg width="20" height="18" viewBox="0 0 20 18" fill="none"><path d="M10 1.5c-3.5-2-8 .5-8 5 0 4 5 7.5 8 10.5 3-3 8-6.5 8-10.5 0-4.5-4.5-7-8-5z" fill="#C8553D"/></svg>
+            </div>
+            <p class="voice-text">&bdquo;{t.text}&rdquo;</p>
+            <p class="voice-author">— {t.author}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="voices-screenshots">
+        <Image src={fbKom1} alt="Komentarze na Facebooku" width={340} class="fb-img" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KSIĄŻKA, O KTÓRĄ PROSILI CZYTELNICY (z V1) -->
+<section class="origin">
+  <div class="container origin-inner">
+    <div class="origin-text">
+      <h2>Książka, o którą prosili czytelnicy</h2>
+      <p>BUSIA nie powstała w zaciszu gabinetu. Powstała w Internecie — w grupie &bdquo;Przedwojenna Polska na fotografii&rdquo;, gdzie Bogusława Skwarna zaczęła publikować krótkie posty o swojej babci, ilustrowane starymi rodzinnymi zdjęciami.</p>
+      <p>Reakcja była natychmiastowa i przytłaczająca. Pod każdym postem pojawiały się dziesiątki komentarzy. Ludzie pisali, że chcą wiedzieć więcej. Że czekają na kolejny odcinek. Że ta historia powinna stać się książką. Niektórzy spontanicznie &bdquo;naprawiali&rdquo; zniszczone fotografie, przywracając im dawne piękno.</p>
+      <p>Autorka długo się broniła. Ale w końcu uległa — jak sama mówi — &bdquo;cudownym naciskom&rdquo;.</p>
+      <p class="origin-punchline">Nie dlatego, że autorka chciała napisać książkę.<br />Dlatego, że ludzie chcieli ją przeczytać.</p>
+    </div>
+    <div class="origin-fb">
+      <Image src={fbPost1} alt="Post na Facebooku — 1900 reakcji" width={350} class="fb-img" />
+    </div>
+  </div>
+</section>
+
+<!-- O CZYM JEST BUSIA -->
+<section id="o-ksiazce" class="about">
+  <div class="container about-inner">
+    <div class="about-text">
+      <h2>O czym jest BUSIA?</h2>
+      <p>Bogusława Lublicka urodziła się w 1911 roku w zamożnej warszawskiej rodzinie. Miała wszystko — dom, pianino, wakacje w Zaleszczykach. Potem spotkała Stacha. Byli szczęśliwym małżeństwem.</p>
+      <p class="about-war">A potem przyszła wojna.</p>
+      <p>Stach zmarł w 1944. Busia została sama z synem. Nie złamała się. To opowieść o kobiecie, która była &bdquo;jak jedwabna nić: delikatna, a zarazem mocna&rdquo;. Pełna przedwojennych fotografii, listów i wspomnień.</p>
+    </div>
+    <div class="about-image">
+      <Image src={portret} alt="Portret młodej Busi" width={350} />
+    </div>
+  </div>
+</section>
+
+<!-- FRAGMENT (styl V5) -->
+<section class="excerpt">
+  <div class="container">
+    <blockquote class="big-quote">
+      &bdquo;Zamknij oczy i pomyśl o swojej babci. Co widzisz?&rdquo;
+    </blockquote>
+    <div class="excerpt-text">
+      <p>A teraz opowiem Ci co ja widzę&hellip; Widzę jak wspólnie robimy drożdżowe ciasto, bo ona nie miała już siły, żeby je sama wyrobić, jak zakłada beret, w taki sposób jak tylko ona to robiła&hellip; Nie tylko widzę, ale też słyszę&hellip; Dźwięk kilkunastu srebrnych bransoletek kółeczek, które na jej ręce brzęczą uderzając o siebie&hellip; Mało tego&hellip; Czuję&hellip; Jej zapach i zapach jej rzeczy. Nikt inny tak nie pachniał i nie pachnie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- O AUTORCE (styl V5 — daty równoległe) -->
+<section id="autorka" class="author">
+  <div class="container author-inner">
+    <Image src={autorkaBiale} alt="Bogusława Skwarna" width={350} class="author-img" />
+    <div class="author-text">
+      <h2>O autorce</h2>
+      <div class="author-parallel">
+        <div class="parallel-item">
+          <span class="parallel-year">1911</span>
+          <span>Rodzi się Bogusława Lublicka</span>
+        </div>
+        <div class="parallel-item">
+          <span class="parallel-year">1961</span>
+          <span>Rodzi się Bogusława Skwarna — wnuczka. Dokładnie 50 lat później. To samo imię.</span>
+        </div>
+      </div>
+      <p>Więź między nimi była wyjątkowa od pierwszego dnia. BUSIA to pierwsza książka autorki — ale nie pierwsza próba opowiedzenia tej historii. Przez lata zbierała zdjęcia, dokumenty i wspomnienia.</p>
+      <p>Książka powstała na prośbę setek czytelników grupy &bdquo;Przedwojenna Polska na fotografii&rdquo; na Facebooku, gdzie autorka publikowała historię w odcinkach.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ZAKUP (styl hero z V2) -->
+<section id="zamow" class="product">
+  <div class="container product-inner">
+    <div class="product-cover">
+      <Image src={okladka} alt="Okładka BUSIA" width={380} class="product-cover-img" />
+    </div>
+    <div class="product-info">
+      <h2>Zamów swoją BUSIĘ</h2>
+      <p class="product-author">Bogusława Skwarna</p>
+      <div class="product-prices">
+        <div class="price-tag">
+          <span class="price-amount">99 zł</span>
+          <span class="price-label">druk + wysyłka</span>
+        </div>
+        <div class="price-tag">
+          <span class="price-amount">79 zł</span>
+          <span class="price-label">PDF — natychmiast</span>
+        </div>
+      </div>
+      <div class="product-ctas">
+        <a href="#" class="btn btn-primary">Zamów druk</a>
+        <a href="#" class="btn btn-secondary">Zamów PDF</a>
+      </div>
+      <div class="product-meta">
+        <div class="meta-item"><strong>190</strong> stron, pełen kolor</div>
+        <div class="meta-item"><strong>142</strong> przedwojenne zdjęcia</div>
+        <div class="meta-item">Wysyłka: InPost / kurier</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STOPKA -->
+<footer class="footer">
+  <div class="container">
+    <p>Kontakt: <a href="mailto:boguslawaskwarna@gmail.com">boguslawaskwarna@gmail.com</a></p>
+    <p class="copyright">&copy; 2026 Bogusława Skwarna. Wszelkie prawa zastrzeżone.</p>
+  </div>
+</footer>
+
+<style>
+  /* === V6 PALETTE: Ciepły ceglasty/terakota z kremem (z V4) === */
+  :global(body.v6) {
+    --bg: #FBF7F2;
+    --bg-alt: #F0E6D8;
+    --text: #2D241E;
+    --text-light: #6B5D52;
+    --accent: #C8553D;
+    --accent-light: #D4915A;
+    --border: #D9CBBA;
+    --btn-text: #FBF7F2;
+  }
+
+  /* NAV */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(251, 247, 242, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+  }
+
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; letter-spacing: 0.15em; color: var(--accent); }
+  .nav-links { display: flex; align-items: center; gap: 2rem; font-size: 0.9rem; }
+  .nav-links a:not(.nav-cta) { color: var(--text-light); transition: color 0.3s; }
+  .nav-links a:not(.nav-cta):hover { color: var(--accent); }
+  .nav-cta { padding: 0.5rem 1.5rem !important; font-size: 0.85rem !important; }
+
+  /* HERO */
+  .hero {
+    padding: 7rem 1.5rem 4rem;
+    background: var(--bg);
+  }
+
+  .hero-stats-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+
+  .big-stat { display: flex; flex-direction: column; }
+  .big-number { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: var(--accent); }
+  .big-label { font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .hero-main {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .hero h1 { color: var(--accent); margin-bottom: 1.5rem; }
+  .hero-desc { font-size: 1.1rem; color: var(--text); margin-bottom: 2rem; line-height: 1.8; }
+
+  .cover-img {
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  }
+
+  /* VOICES — duży font */
+  .voices { background: var(--bg-alt); }
+  .voices h2 { color: var(--accent); text-align: center; margin-bottom: 0.8rem; }
+  .voices-intro { text-align: center; color: var(--text-light); margin-bottom: 3rem; }
+
+  .voices-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .voices-quotes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .voice-card {
+    background: var(--bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+
+  .voice-icon { margin-bottom: 0.8rem; }
+
+  .voice-text {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.35rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+    color: var(--text);
+  }
+
+  .voice-author {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .voices-screenshots {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .fb-img {
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  }
+
+  /* ORIGIN (z V1) */
+  .origin { background: var(--bg); }
+
+  .origin-inner {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .origin h2 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .origin-text p {
+    margin-bottom: 1rem;
+  }
+
+  .origin-punchline {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 1.5rem;
+    line-height: 1.5;
+  }
+
+  /* ABOUT */
+  .about { background: var(--bg-alt); }
+
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .about h2 { color: var(--accent); margin-bottom: 1.5rem; }
+  .about-text p { margin-bottom: 1rem; }
+  .about-war { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--accent); margin: 1rem 0; }
+
+  .about-image img {
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  /* EXCERPT (styl V5) */
+  .excerpt {
+    background: var(--accent);
+    text-align: center;
+    padding: 5rem 1.5rem;
+    color: var(--btn-text);
+  }
+
+  .big-quote {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    border: none;
+    padding: 0;
+    color: #fff;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+  }
+
+  .excerpt-text {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* AUTHOR (styl V5 — daty równoległe) */
+  .author { background: var(--bg); }
+
+  .author-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .author-img {
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  .author h2 { color: var(--accent); margin-bottom: 1.5rem; }
+
+  .author-parallel {
+    margin-bottom: 1.5rem;
+  }
+
+  .parallel-item {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .parallel-year {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--accent);
+    flex-shrink: 0;
+    width: 50px;
+  }
+
+  .author-text p { margin-bottom: 1rem; }
+
+  /* PRODUCT (styl hero z V2) */
+  .product {
+    background: var(--bg-alt);
+    padding: 5rem 1.5rem;
+  }
+
+  .product-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .product-cover-img {
+    border-radius: 4px;
+    box-shadow: 0 25px 70px rgba(45, 36, 30, 0.3);
+  }
+
+  .product h2 {
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+
+  .product-author {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+  }
+
+  .product-prices {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .price-tag {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.8rem;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    background: var(--bg);
+  }
+
+  .price-amount {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .price-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .product-ctas {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .product-meta {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+
+  .product-meta strong {
+    color: var(--accent);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+  }
+
+  /* FOOTER */
+  .footer { background: var(--text); color: var(--bg); text-align: center; padding: 2.5rem 1.5rem; }
+  .footer a { color: var(--accent-light); }
+  .copyright { margin-top: 1rem; font-size: 0.8rem; opacity: 0.6; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links a:not(.nav-cta) { display: none; }
+
+    .hero-stats-bar { gap: 1rem; }
+
+    .hero-main,
+    .origin-inner,
+    .about-inner,
+    .author-inner,
+    .product-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-cover {
+      text-align: center;
+      order: -1;
+    }
+
+    .cover-img,
+    .product-cover-img {
+      max-width: 250px;
+      margin: 0 auto;
+    }
+
+    .voices-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .voices-quotes {
+      grid-template-columns: 1fr;
+    }
+
+    .voice-text {
+      font-size: 1.2rem;
+    }
+
+    .product-cover {
+      text-align: center;
+    }
+
+    .product-prices {
+      justify-content: center;
+    }
+
+    .product-ctas {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .product-meta {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .origin-fb {
+      text-align: center;
+    }
+  }
+</style>
+</BaseLayout>

@@ -1,0 +1,25 @@
+{
+  "title": "BUSIA. Historia, która zawojowała Facebook",
+  "author": "Bogusława Skwarna",
+  "year": 2026,
+  "language": "polski",
+  "variants": [
+    {
+      "id": "print",
+      "name": "Książka drukowana",
+      "description": "ok. 190 stron, pełen kolor",
+      "price": 99,
+      "shipping": "InPost Paczkomaty / kurier",
+      "shippingNote": "+ koszt wysyłki"
+    },
+    {
+      "id": "pdf",
+      "name": "Książka PDF",
+      "description": "Do pobrania natychmiast po płatności",
+      "price": 79,
+      "shipping": null,
+      "shippingNote": "Bez wysyłki"
+    }
+  ],
+  "contact": "boguslawaskwarna@gmail.com"
+}
