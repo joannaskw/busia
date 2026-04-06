@@ -16,7 +16,8 @@
       "Bash(git:*)",
       "Bash(python3:*)",
       "Bash(pip3 install:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(npm --version)"
     ]
   }
 }
