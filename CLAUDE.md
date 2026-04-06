@@ -16,4 +16,5 @@ W folderze `content/` znajdą się screeny z grupy na Facebooku — wpisy mamy J
 
 - **[Pełny brief www](book/brief-www.md)** — kompletne teksty na wszystkie sekcje landing page'a: hero, o książce, jak powstała, głosy czytelników (social proof z FB), o autorce, fragment, produkt, SEO, sugestie zdjęć i CTA.
 - **[Executive summary](book/executive-summary.md)** — skrócone podsumowanie najważniejszych informacji: dane o książce, grupa docelowa, USP, kluczowe cytaty, struktura sekcji strony.
-- **book/BUSIA SRODEK FINAL.pdf** — pełny PDF książki (środek, wersja finalna).
+- **book/BUSIA SRODEK FINAL.pdf** — pełny PDF książki (95 stron, oryginał z layoutem i zdjęciami).
+- **book/BUSIA SRODEK FINAL.md** — książka w formacie Markdown (pełna treść tekstowa, bez zdjęć).
