@@ -10,7 +10,11 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(gh repo:*)",
-      "Bash(unzip -o \"/Users/jplona/Downloads/busia zdjecia.zip\" -d /Users/jplona/ai/busia/content/photos)"
+      "Bash(unzip -o \"/Users/jplona/Downloads/busia zdjecia.zip\" -d /Users/jplona/ai/busia/content/photos)",
+      "Bash(git push:*)",
+      "Bash(gh ssh-key:*)",
+      "Bash(git:*)",
+      "Bash(python3:*)"
     ]
   }
 }
