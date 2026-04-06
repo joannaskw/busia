@@ -19,3 +19,5 @@ W folderze `content/` znajdą się screeny z grupy na Facebooku — wpisy mamy J
 - **book/BUSIA SRODEK FINAL.pdf** — pełny PDF książki (95 stron, oryginał z layoutem i zdjęciami).
 - **book/BUSIA SRODEK FINAL.md** — książka w formacie Markdown (pełna treść tekstowa, bez zdjęć).
 - **book/bookcoverJPG.JPG** — zdjęcie okładki książki. Jeśli potrzebne jest zdjęcie okładki, to jest właściwy plik.
+- **book/autorka-biale-tlo.jpg** — zdjęcie autorki książki na białym tle.
+- **book/autorka-przezroczyste-tlo.jpg** — zdjęcie autorki książki na przezroczystym tle (lepsze do użycia na kolorowych tłach na stronie).
